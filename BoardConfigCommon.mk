@@ -156,6 +156,9 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.samsungexynos7420
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
 
+# Releasetools - for resizing system filesystem
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/noblelte-common/releasetools
+
 # OpenMAX-shims
 TARGET_LD_SHIM_LIBS += \
 	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
