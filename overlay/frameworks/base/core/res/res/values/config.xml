@@ -332,10 +332,29 @@
     <!-- For performance and storage reasons, limit the number of fingerprints per user -->
     <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
 
-    <!-- If enabled, capacitive keys will only light up when pressed.
-         Otherwise, the buttons will light up whenever the user interacts with the device -->
-    <!-- <bool name="config_buttonLightOnKeypressOnly">true</bool> -->
-    
+    <!-- Defines the default set of global actions. Actions may still be disabled or hidden based
+         on the current state of the device.
+         Each item must be one of the following strings:
+         "power" = Power off
+         "settings" = An action to launch settings
+         "airplane" = Airplane mode toggle
+         "bugreport" = Take bug report, if available
+         "silent" = silent mode
+         "users" = list of users
+         "restart" = restart device
+         "advanced_restart" = restart device into recovery etc.
+         -->
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>power</item>
+        <item>restart</item>
+        <!-- <item>advanced_restart</item>
+        <item>settings</item>
+        <item>airplane</item>
+        <item>bugreport</item>
+        <item>silent</item>
+        <item>users</item> -->
+    </string-array>
+
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
 
