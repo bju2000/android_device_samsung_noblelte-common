@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 BOARD_VENDOR := samsung
 
@@ -91,7 +91,7 @@ TARGET_LD_SHIM_LIBS += \
 
 # Hardware
 BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
-BOARD_HARDWARE_CLASS += device/samsung/zero-common/lineagehw
+BOARD_HARDWARE_CLASS += device/samsung/noblelte-common/lineagehw
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
@@ -103,9 +103,6 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 # HDMI
 BOARD_HDMI_INCAPABLE := true
 BOARD_USES_GSC_VIDEO := true
-
-# Init
-TARGET_UNIFIED_DEVICE := true
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
@@ -122,7 +119,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
-DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest.xml
+DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal7420
@@ -138,10 +135,6 @@ BOARD_USE_METADATABUFFERTYPE := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_BOOTIMAGE_PARTITION_SIZE := 29360128
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 35651584
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3656552448
-#BOARD_USERDATAIMAGE_PARTITION_SIZE := 59183980544 #64GB
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
@@ -196,19 +189,19 @@ TARGET_LD_SHIM_LIBS += \
        /system/lib64/libbauthserver.so|/system/lib64/libbauthserver_shim.so
 
 # Seccomp filters
-BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
+BOARD_SECCOMP_POLICY += device/samsung/noblelte-common/seccomp
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # TWRP
 ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
--include device/samsung/zero-common/twrp.mk
+-include device/samsung/noblelte-common/twrp.mk
 endif
 
 # Bootanimation Dimensions
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2048
+TARGET_SCREEN_WIDTH := 1536
 
 # WFD
 BOARD_USES_WFD := true

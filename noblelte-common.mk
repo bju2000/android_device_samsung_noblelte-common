@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Common Overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
 
-ifneq ($(filter zerofltespr zeroltespr,$(TARGET_DEVICE)),)
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-cdma
+ifneq ($(filter nobleltespr,$(TARGET_DEVICE)),)
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-cdma
 else
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-gsm
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-gsm
 endif
 
 # This device is 640dpi.  However the platform doesn't
@@ -37,8 +37,8 @@ PRODUCT_AAPT_PREF_CONFIG := 640dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2048
+TARGET_SCREEN_WIDTH := 1536
 
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
 
