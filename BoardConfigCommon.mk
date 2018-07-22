@@ -224,5 +224,5 @@ RIL_SET_CALL_CLOCK_SYNC_WORKAROUND := true
 RIL_SET_TWO_MIC_CONTROL_WORKAROUND := true
 
 # inherit from the proprietary version
--include vendor/samsung/zero-common/BoardConfigVendor.mk
+-include vendor/samsung/noblelte-common/BoardConfigVendor.mk
 
