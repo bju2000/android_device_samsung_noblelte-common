@@ -59,9 +59,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 
-# FIMG2D
-BOARD_USES_SKIA_FIMGAPI := true
-
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
@@ -78,10 +75,24 @@ TARGET_AUDIOHAL_VARIANT := samsung
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_USES_VIRTUAL_DISPLAY := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
-# (G)SCALER
+# ION
+TARGET_USES_ION := true
+
+#
+# Samsung LSI Graphics
+#
+
+# Buffers
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+
+# FIMG2D
+BOARD_USES_SKIA_FIMGAPI := true
+
+# GScaler
 BOARD_USES_SCALER := true
 
 # GPS-shims
@@ -101,7 +112,6 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
-BOARD_USES_GSC_VIDEO := true
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
@@ -114,6 +124,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x10008000 --ramdisk_offset 0x11000000 -
 TARGET_KERNEL_SOURCE := kernel/samsung/noblelte
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
+TARGET_LINUX_KERNEL_VERSION := 3.10
 # BOARD_KERNEL_SEPARATED_DT := true
 # TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
@@ -123,12 +134,24 @@ DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal7420
 
-# Samsung LSI OpenMAX
-#COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
-
-# OpenMAX video
-BOARD_USE_DMA_BUF := true
+# Metadata
 BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USE_STOREMETADATA := true
+
+# Others
+BOARD_USE_CSC_HW := false
+BOARD_USE_DMA_BUF := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := false
+BOARD_USES_GSC_VIDEO := true
+BOARD_USES_VIRTUAL_DISPLAY := true
+
+# Samsung LSI OpenMAX
+BOARD_USE_VP8ENC_SUPPORT := true
+BOARD_USE_HEVCDEC_SUPPORT := true
+BOARD_USE_HEVC_HWIP := false
+COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
