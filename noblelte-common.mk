@@ -123,8 +123,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service
 
 # DTB
-PRODUCT_PACKAGES += \
-	dtbhtoolExynos
+#  PRODUCT_PACKAGES += \
+#	dtbhtoolExynos
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

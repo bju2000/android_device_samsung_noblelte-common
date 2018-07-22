@@ -18,7 +18,7 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(BOARD_VENDOR),samsung)
-ifneq ($(filter nobleltejv noblteltedd nobleltetmo nobleltebmc nobleltespr,$(TARGET_DEVICE)),)
+ifneq ($(filter nobleltejv noblteltedd nobleltetmo nobleltebmc nobleltespr nobleltexx noblelte,$(TARGET_DEVICE)),)
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 

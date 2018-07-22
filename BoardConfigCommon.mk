@@ -83,7 +83,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # (G)SCALER
 BOARD_USES_SCALER := true
-BOARD_USES_DT := true
 
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
@@ -112,11 +111,11 @@ BOARD_KERNEL_BASE := 0x10000000
 # BOARD_KERNEL_CMDLINE := commandline from boot.img by bootloader
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x10008000 --ramdisk_offset 0x11000000 --tags_offset 0x10000100
-TARGET_KERNEL_SOURCE := kernel/samsung/exynos7420
+TARGET_KERNEL_SOURCE := kernel/samsung/noblelte
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
-BOARD_KERNEL_SEPARATED_DT := true
-TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+# BOARD_KERNEL_SEPARATED_DT := true
+# TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
 DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
@@ -226,3 +225,4 @@ RIL_SET_TWO_MIC_CONTROL_WORKAROUND := true
 
 # inherit from the proprietary version
 -include vendor/samsung/zero-common/BoardConfigVendor.mk
+
